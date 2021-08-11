@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <button
+        class="add-berchnen"
+        mat-raised-button
+        color="primary"
+        [routerLink]="['/berchnen']"
+      >
+        <mat-icon>add</mat-icon> Neue Berechnungen
+      </button>
+    </div>
+  </div>
+  <hr />
+
+  <h2 class="Bisherige">Bisherige Berchnungen</h2>
+
+  <div *ngIf="berechnungen && berechnungen.length > 0" class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <ul class="list-group selected-people-list">
+        <li
+          class="list-group-item selected-people-item"
+          *ngFor="let berechnung of berechnungen"
+        >
+          <h1>{{ berechnung.name }}</h1>
+          <span>{{ berechnung.total }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
